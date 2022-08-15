@@ -1,0 +1,22 @@
+{
+  "name": "prevalent_app--backend",
+  "version": "1.0.0",
+  "description": "Backend de Pruebas - PrevalentWare",
+  "main": "index.js",
+  "scripts": {
+    "start": "index.js",
+    "test": "nodemon index.js"
+  },
+  "author": "Michael Navarrete",
+  "license": "MIT",
+  "dependencies": {
+    "@prisma/client": "^4.2.1",
+    "body-parser": "^1.20.0",
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "prisma": "^4.2.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.19"
+  }
+}

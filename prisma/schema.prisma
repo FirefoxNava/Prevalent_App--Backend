@@ -16,7 +16,9 @@ model Empresas{
   id Int @id
   nombre String @db.Char(225)
   razonSocial String @db.Char(225)
+  nit String @db.Char(225)
   numeroEmpleados Int @db.Int
   logo String @db.Char(225)
+  archivos String @db.Char(225)
   estado Boolean
 }

@@ -14,6 +14,7 @@ EmpresasRutas.post('/update/:id', EmpresaControlador.modificarEstado)
 EmpresasRutas.delete('/delete/:id', EmpresaControlador.borrarEmpresa)
 EmpresasRutas.get('/all', EmpresaControlador.obtenerEmpresas)
 EmpresasRutas.get('/id/:id', EmpresaControlador.obtenerEmpresa)
+EmpresasRutas.get('/getFile/:id', EmpresaControlador.descargarArchivo)
 
 
 //Exportar

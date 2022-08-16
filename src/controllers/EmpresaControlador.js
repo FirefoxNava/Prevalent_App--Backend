@@ -4,6 +4,7 @@ const {PrismaClient} = require('@prisma/client')
 
 const prisma = new PrismaClient()
 
+const app = require('../../index')
 
 const EmpresaControlador = {
 
@@ -77,6 +78,7 @@ const EmpresaControlador = {
         }
     },
 
+    //obtenerEmpresa
     obtenerEmpresa : async(req, res) => {
         const {id} = req.params
 
@@ -90,6 +92,21 @@ const EmpresaControlador = {
                 empresas : result
             })
         }
+    },
+
+    //descargarArchivo
+    descargarArchivo : (req,res) => {
+        const {id} = req.params
+
+        res.set()
+
+        res.download(app.path+'\\'+id, id, (err) => {
+            if(err){
+                return res.status(400).send({
+                    status : 'error'
+                })
+            }
+        })
     }
 }
 

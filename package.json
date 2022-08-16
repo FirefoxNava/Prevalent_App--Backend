@@ -4,7 +4,7 @@
   "description": "Backend de Pruebas - PrevalentWare",
   "main": "index.js",
   "scripts": {
-    "start": "index.js",
+    "start": "node index.js",
     "test": "nodemon index.js"
   },
   "author": "Michael Navarrete",

@@ -106,7 +106,10 @@ const EmpresaControlador = {
 
         res.set()
 
-        res.download(app.path+'\\'+id, id, (err) => {
+        //Windows \\
+        //Linux /
+        
+        res.download(app.path+'/'+id, id, (err) => {
             if(err){
                 return res.status(400).send({
                     status : 'error'

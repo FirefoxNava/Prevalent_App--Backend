@@ -11,7 +11,7 @@ const EmpresaControlador = {
     //Agregar una empresa
 
     agregarEmpresa : async(req, res) => {
-        const {id, nombre, razonSocial, numeroEmpleados, logo, estado} = req.body
+        const {id, nombre, razonSocial, numeroEmpleados, logo, estado, nit, archivos} = req.body
 
         const result = await prisma.empresas.create({
             data : {
@@ -20,7 +20,9 @@ const EmpresaControlador = {
                 razonSocial : razonSocial,
                 numeroEmpleados : numeroEmpleados,
                 logo : logo,
-                estado : estado
+                estado : estado,
+                nit : nit,
+                archivos : archivos
             }
         })
 
@@ -41,11 +43,15 @@ const EmpresaControlador = {
             where : {id : Number(id)},
             data : {
                 estado : estado
+            },
+            select: {
+                estado : true
             }
         })
 
         if(result) {
             return res.status(201).send({
+                empresa: result,
                 status : 'success'
             })
         }
@@ -71,7 +77,7 @@ const EmpresaControlador = {
         const result = await prisma.empresas.findMany()
 
         if(result){
-            return res.status(201).send({
+            return res.status(200).send({
                 status : 'success',
                 empresas : result
             })
